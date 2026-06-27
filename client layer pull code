@@ -1,0 +1,31 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return jsonify({
+        "Project": "AI Powered Personalized Study Assistant",
+        "Status": "Running Successfully"
+    })
+
+@app.route("/chat")
+def chat():
+    return jsonify({
+        "response":"Hello! How can I assist your learning today?"
+    })
+
+@app.route("/summary")
+def summary():
+    return jsonify({
+        "summary":"This API generates summaries from uploaded study materials."
+    })
+
+@app.route("/quiz")
+def quiz():
+    return jsonify({
+        "quiz":"Quiz generation module is active."
+    })
+
+if __name__=="__main__":
+    app.run(debug=True)
